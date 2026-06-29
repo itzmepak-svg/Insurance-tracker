@@ -1,20 +1,37 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Website Clone",
-  description: "Pixel-perfect website clone",
+  title: "Coimbatore Medical College & Hospital — Our Location",
+  description:
+    "Coimbatore Medical College & Hospital (CMCH) — A premier government medical institution providing world-class healthcare in Coimbatore, Tamil Nadu since 1966.",
+  keywords: [
+    "Coimbatore Medical College",
+    "CMCH",
+    "Coimbatore hospital",
+    "government hospital Coimbatore",
+    "medical college Tamil Nadu",
+  ],
+  openGraph: {
+    title: "Coimbatore Medical College & Hospital",
+    description:
+      "Premier government medical institution in Coimbatore, Tamil Nadu providing comprehensive healthcare since 1966.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -25,7 +42,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${inter.variable} ${poppins.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
